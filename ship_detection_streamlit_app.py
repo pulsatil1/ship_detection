@@ -31,7 +31,7 @@ def ShowImage(model, src_img, one_image=False):
         image_list.append(predicted)
 
         captions = ['Base image', 'Prediction']
-        st.image(image_list, caption=captions, clamp=True, width=300)
+        st.image(image_list, caption=captions, clamp=True, width=400)
 
 
 model = load_model()
