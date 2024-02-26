@@ -31,7 +31,7 @@ def ShowImage(model, src_img, one_image=False):
         image_list.append(predicted)
 
         captions = ['Base image', 'Prediction']
-        st.image(image_list, caption=captions, clamp=True, width=225)
+        st.image(image_list, caption=captions, clamp=True, width=300)
 
 
 model = load_model()
@@ -47,7 +47,3 @@ uploaded_image = st.file_uploader(
 if st.button('Detect the ships'):
     if uploaded_image is not None:
         ShowImage(model, uploaded_image)
-
-if st.button('Show only predicted image'):
-    if uploaded_image is not None:
-        ShowImage(model, uploaded_image, True)
