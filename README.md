@@ -35,6 +35,6 @@ During the learning model achieved 0.6176 Dice loss on training dataset, and 0.6
 To deploy the project on your local machine after clone repository, you need to install libraries from requirements.txt, and then run next command from the console:
 `streamlit run ship_detection_streamlit_app.py`
 
-or u can simply run this streamlit application - link: https://shipdetection-ewi7fvci36pkrwdju8v9yh.streamlit.app/
+Or you can simply run this streamlit application - link: https://shipdetection-ewi7fvci36pkrwdju8v9yh.streamlit.app/
 
 
