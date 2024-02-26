@@ -1,11 +1,8 @@
-import os
-import cv2
 import numpy as np
 import tensorflow as tf
 from tensorflow import keras
 import streamlit as st
 from functions import losses
-import config
 from PIL import Image
 from skimage.io import imread
 from skimage.morphology import binary_opening

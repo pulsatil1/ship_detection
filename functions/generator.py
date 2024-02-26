@@ -1,8 +1,6 @@
 import numpy as np
 import os
 from skimage.io import imread
-import tensorflow as tf
-import cv2
 from keras.preprocessing.image import ImageDataGenerator
 import config
 from functions import utils
