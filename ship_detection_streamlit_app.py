@@ -7,11 +7,12 @@ import streamlit as st
 from functions import losses
 import config
 from PIL import Image
+from skimage.io import imread
+from skimage.morphology import binary_opening
 
 
 @st.cache_resource
 def load_model():
-    # return keras.models.load_model('seg_model.h5', custom_objects={"dice_loss": losses.dice_loss})
     return keras.models.load_model('fullres_model.h5', custom_objects={"dice_loss": losses.dice_loss})
 
 
@@ -19,7 +20,7 @@ def ShowImage(model, src_img, one_image=False):
 
     image = Image.open(src_img)
     img = np.array(image, dtype=np.float64)
-    img = img[::config.IMG_SCALING[0], ::config.IMG_SCALING[1]]
+    img = np.resize(img, (768, 768, 3))
     img = img/255
     img = tf.expand_dims(img, axis=0)
     predicted = model.predict(img)
@@ -28,9 +29,6 @@ def ShowImage(model, src_img, one_image=False):
     if one_image:
         st.image(predicted, width=500)
     else:
-        # rgb_img = cv2.imread(src_img)
-        # rgb_img = cv2.cvtColor(rgb_img, cv2.COLOR_BGR2RGB)
-
         image_list = []
         image_list.append(image)
         image_list.append(predicted)

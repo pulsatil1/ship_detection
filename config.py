@@ -13,7 +13,6 @@ IMG_SCALING = (3, 3)
 VALID_IMG_COUNT = 900
 # maximum number of steps_per_epoch in training
 MAX_TRAIN_STEPS = 10
-MAX_TRAIN_EPOCHS = 100
 AUGMENT_BRIGHTNESS = False
 SAMPLES_PER_GROUP = 2000
 

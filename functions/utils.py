@@ -26,30 +26,3 @@ def masks_as_image(in_mask_list):
         if isinstance(mask, str):
             all_masks |= rle_decode(mask)
     return all_masks
-
-
-def multi_rle_encode(img, **kwargs):
-    '''
-    Encode connected regions as separated masks
-    '''
-    labels = label(img)
-    if img.ndim > 2:
-        return [rle_encode(np.sum(labels == k, axis=2), **kwargs) for k in np.unique(labels[labels > 0])]
-    else:
-        return [rle_encode(labels == k, **kwargs) for k in np.unique(labels[labels > 0])]
-
-
-def rle_encode(img, min_max_threshold=1e-3, max_mean_threshold=None):
-    '''
-    img: numpy array, 1 - mask, 0 - background
-    Returns run length as string formated
-    '''
-    if np.max(img) < min_max_threshold:
-        return ''  # no need to encode if it's all zeros
-    if max_mean_threshold and np.mean(img) > max_mean_threshold:
-        return ''  # ignore overfilled mask
-    pixels = img.T.flatten()
-    pixels = np.concatenate([[0], pixels, [0]])
-    runs = np.where(pixels[1:] != pixels[:-1])[0] + 1
-    runs[1::2] -= runs[::2]
-    return ' '.join(str(x) for x in runs)

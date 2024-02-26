@@ -17,7 +17,7 @@ Main files:
 In this competition, we needed to locate ships in images. More than half images do not contain ships, and those that do may contain multiple ships.
 File train_ship_segmentations_v2.csv contains id and encoded pixels with places of ships. So we need to decode these pixels into mask the same size as our images.
 We can reduce the images size to facilitate the learning process for the neural network. But the ships on images might be very small, so we can reduce images size only a little.
-Also, because of the dataset isn't balanced, for better model performance, we created a balanced train and validation datasets.
+Also, because the dataset isn't balanced, for better model performance, we created better balanced train and validation datasets, by undersampling the empty images.
 
 ###Model
 We used a model with U-Net architecture that is a good choice for the segmentation task.
@@ -26,5 +26,10 @@ Trained the model using GPU.
 
 ###Loss function and metric
 We used the Dice loss function as a main metric. It's calculated as 1-dice_score. We used Dice loss instead of Dise score because we need to decrease the loss function when the model shows better results.
+During the learning model achieved 0.6176 Dice loss on training dataset, and 0.6452 on test dataset.
+
+###Deploying
+
+
 
 
