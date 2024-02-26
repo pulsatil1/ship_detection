@@ -148,7 +148,7 @@ def create_model():
 
     seg_model.fit(aug_gen,
                   steps_per_epoch=step_count,
-                  epochs=20,
+                  epochs=100,
                   validation_data=(valid_x, valid_y),
                   callbacks=callbacks_list,
                   workers=1
