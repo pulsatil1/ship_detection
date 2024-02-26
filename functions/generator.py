@@ -1,5 +1,5 @@
-import numpy as np
 import os
+import numpy as np
 from skimage.io import imread
 from keras.preprocessing.image import ImageDataGenerator
 import config
