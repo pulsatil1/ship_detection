@@ -19,6 +19,9 @@ File train_ship_segmentations_v2.csv contains id and encoded pixels with places 
 We can reduce the images size to facilitate the learning process for the neural network. But the ships on images might be very small, so we can reduce images size only a little.
 Also, because the dataset isn't balanced, for better model performance, we created better balanced train and validation datasets, by undersampling the empty images.
 
+![image](https://github.com/pulsatil1/ship_detection/assets/70263951/a8ecb6a1-81f5-4c72-a09c-305360a419d9)
+
+
 ### Model
 We used a model with U-Net architecture that is a good choice for the segmentation task.
 We also used Dropout layers and data augmentation, to avoid overfitting.
@@ -32,5 +35,6 @@ During the learning model achieved 0.6176 Dice loss on training dataset, and 0.6
 To deploy the project on your local machine after clone repository, you need to install libraries from requirements.txt, and then run next command from the console:
 `streamlit run ship_detection_streamlit_app.py`
 
+or u can simply run this streamlit application - link: https://shipdetection-ewi7fvci36pkrwdju8v9yh.streamlit.app/
 
 
