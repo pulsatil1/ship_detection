@@ -13,7 +13,7 @@ Main files:
  * `fullres_model.h5` - the model ready to work with full-scaled images
 
 ## Description of solution
-###Data exploration
+### Data exploration
 In this competition, we needed to locate ships in images. More than half images do not contain ships, and those that do may contain multiple ships.
 File train_ship_segmentations_v2.csv contains id and encoded pixels with places of ships. So we need to decode these pixels into mask the same size as our images.
 We can reduce the images size to facilitate the learning process for the neural network. But the ships on images might be very small, so we can reduce images size only a little.
