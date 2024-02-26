@@ -29,7 +29,7 @@ We used the Dice loss function as a main metric. It's calculated as 1-dice_score
 During the learning model achieved 0.6176 Dice loss on training dataset, and 0.6452 on test dataset.
 
 ### Deploying
-To deploy the project on your local machine after clone repository, you need to install libraries from requirements.txt, and the rin next command from console:
+To deploy the project on your local machine after clone repository, you need to install libraries from requirements.txt, and then run next command from the console:
 `streamlit run ship_detection_streamlit_app.py`
 
 
