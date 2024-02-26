@@ -1,0 +1,7 @@
+# Temp files
+/.ipynb_checkpoints
+/__pycache__
+
+#virtual environment
+/venv
+
