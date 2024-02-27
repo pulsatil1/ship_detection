@@ -29,7 +29,6 @@ Trained the model using GPU.
 
 ### Loss function and metric
 We used the Dice loss function as a main metric. It's calculated as 1-dice_score. We used Dice loss instead of Dise score because we need to decrease the loss function when the model shows better results.
-During the learning model achieved 0.6176 Dice loss on training dataset, and 0.6452 on test dataset.
 
 ### Deploying
 To deploy the project on your local machine after clone repository, you need to install libraries from requirements.txt, and then run next command from the console:
